@@ -16,3 +16,6 @@
 const gimme = (arr: number[]) => {
   return arr.indexOf([...arr].sort((a, b) => a - b)[1]);
 };
+
+console.log(gimme([2, 3, 1]), "0");
+console.log(gimme([5, 10, 14]), "1");

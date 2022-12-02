@@ -12,14 +12,14 @@
 
 // SOLUTION:
 
-function removeDupes(arr: string[]) {
+const removeDupes = (arr: string[]) => {
 	return arr.map((word) =>
 		word
 			.split("")
 			.filter((l, i, a) => l != a[i - 1])
 			.join("")
 	);
-}
+};
 
 console.log(
 	removeDupes(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"]),

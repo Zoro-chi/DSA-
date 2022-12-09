@@ -8,7 +8,6 @@ const countChars = (str: string) => {
 		[key: string]: any;
 	}
 
-	// let answer: answerType = {} as any as answerType;
 	let answer: answerType = {};
 
 	for (const letter of str) {

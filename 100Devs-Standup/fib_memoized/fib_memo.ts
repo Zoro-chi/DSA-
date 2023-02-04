@@ -31,7 +31,7 @@ const fibMemo = (n: number): number => {
 	} else if (memo[n]) {
 		return memo[n];
 	} else {
-		let res = fibMemo(n - 2) + fibMemo(n - 1);
+		const res = fibMemo(n - 2) + fibMemo(n - 1);
 		memo[n] = res;
 		return res;
 	}

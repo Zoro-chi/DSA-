@@ -22,26 +22,48 @@
 
 //* SOLUTION
 
+type storageType = {
+	[key: number]: string;
+};
+
 interface Queue {
-	list: any[];
 	enqueue(value: any): void;
 	dequeue(): any;
+	head: number;
+	tail: number;
+	storage: storageType;
 }
 
 class Queue {
 	constructor() {
-		this.list = [];
+		this.storage = {};
+		this.head = 0;
+		this.tail = 0;
 	}
 
-	size() {
-		return this.list.length;
-	}
-
-	enqueue(item) {
-		this.list.push(item);
+	enqueue(item: string) {
+		this.storage[this.tail] = item;
+		this.tail++;
 	}
 
 	dequeue() {
-		return this.list.shift();
+		const removed = this.storage[this.head];
+		delete this.storage[this.head];
+		this.head++;
+		return removed;
 	}
 }
+
+const queue = new Queue();
+
+console.log(queue);
+queue.enqueue("apple");
+console.log(queue);
+queue.enqueue("banana");
+console.log(queue);
+queue.enqueue("blueberry");
+console.log(queue);
+queue.dequeue();
+console.log(queue);
+queue.enqueue("strawberry");
+console.log(queue);
